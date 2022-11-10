@@ -8,6 +8,7 @@ int		test_isprint(void);
 int		test_strlen(void);
 int		test_memset(void);
 int		test_memcpy(void);
+int		test_strnstr(void);
 
 void	run_test(char *name, int (*test_function)(void))
 {
@@ -21,7 +22,7 @@ void	run_test(char *name, int (*test_function)(void))
 	}
 }
 
-int	main(int argc, char const *argv[])
+int	main(void)
 {
 	run_test("isAlpha", test_isalpha);
 	run_test("isDigit", test_isdigit);
@@ -31,5 +32,6 @@ int	main(int argc, char const *argv[])
 	run_test("strlen ", test_strlen);
 	run_test("memset ", test_memset);
 	run_test("memscpy", test_memcpy);
+	run_test("strnstr", test_strnstr);
 	return (0);
 }

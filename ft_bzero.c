@@ -6,13 +6,12 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:11:04 by olimarti          #+#    #+#             */
-/*   Updated: 2022/11/08 20:12:47 by olimarti         ###   ########.fr       */
+/*   Updated: 2022/11/10 00:46:49 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stddef.h>
-
-void	*ft_memset(void *s, int c, size_t n);
 
 void	bzero(void *s, size_t n)
 {
