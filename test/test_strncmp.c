@@ -27,7 +27,7 @@ int	test_strncmp(void)
 			"gasygdygadsygadga", 17) || compare_strncmp("gasygdygadsygadgs",
 			"gasygdygadsygadga", 16), compare_strncmp("gasygdygadsygadgs",
 			"gasygdy", 17) || compare_strncmp("gasygdygadsygadgs",
-			"gasygdygadsygadgs", 0))
+			"gasygdygadsygadgs", 0) || compare_strncmp("test\200", "test\0", 6))
 	{
 		failed = 1;
 	}
