@@ -44,8 +44,8 @@ int	compare_strnstr(void)
 	s4 = "te";
 	printf("\nstrnstr :%s\nft_strnstr :%s", strnstr(s3, s4, 8), ft_strnstr(s3,
 				s4, 8));
-	printf("\n---\nstrnstr :%s\nft_strnstr :%s", strnstr(s1, s2, 9),
-			ft_strnstr(s1, s2, 9));
+	printf("\nstrnstr :%s\nft_strnstr :%s", strnstr(s1, s2, 9), ft_strnstr(s1,
+				s2, 9));
 	return (0);
 }
 

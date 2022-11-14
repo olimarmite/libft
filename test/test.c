@@ -9,6 +9,13 @@ int		test_strlen(void);
 int		test_memset(void);
 int		test_memcpy(void);
 int		test_strnstr(void);
+int		test_memmove(void);
+int		test_strlcpy(void);
+int		test_strlcat(void);
+int		test_toupper(void);
+int		test_tolower(void);
+int		test_strchr(void);
+int		test_strrchr(void);
 
 void	run_test(char *name, int (*test_function)(void))
 {
@@ -33,5 +40,13 @@ int	main(void)
 	run_test("memset ", test_memset);
 	run_test("memscpy", test_memcpy);
 	run_test("strnstr", test_strnstr);
+	run_test("memmove", test_memmove);
+	run_test("strlcpy", test_strlcpy);
+	run_test("strlcat", test_strlcat);
+	run_test("toupper", test_toupper);
+	run_test("tolower", test_tolower);
+	run_test("toupper", test_toupper);
+	run_test("tostrchr", test_strchr);
+	run_test("tostrrchr", test_strrchr);
 	return (0);
 }
