@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 18:11:04 by olimarti          #+#    #+#             */
-/*   Updated: 2022/11/15 11:45:02 by olimarti         ###   ########.fr       */
+/*   Created: 2022/11/15 12:23:34 by olimarti          #+#    #+#             */
+/*   Updated: 2022/11/15 15:11:55 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int	ft_atoi(const char *nptr)
 {
+	int		nb;
 	size_t	i;
 
+	nb = 0;
 	i = 0;
-	while (dst[i] && (i < size))
+	while ((*nptr >= 9 && *nptr <= 13) || *nptr == 32)
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
 		i++;
-	return ((i + ft_strlcpy(dst + i, src, size - i)));
+	while (nptr[i] != 0 && ft_isdigit(nptr[i]))
+	{
+		nb = nb * 10 + (nptr[i] - 48);
+		i++;
+	}
+	if (*nptr == '-')
+	{
+		nb *= -1;
+	}
+	return (nb);
 }
