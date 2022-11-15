@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 18:23:41 by olimarti          #+#    #+#             */
-/*   Updated: 2022/11/14 23:03:43 by olimarti         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:40:21 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		result = src;
 	}
-	return (char *)(result);
+	return ((char *)(result));
 }

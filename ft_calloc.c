@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 12:23:34 by olimarti          #+#    #+#             */
-/*   Updated: 2022/11/15 15:18:27 by olimarti         ###   ########.fr       */
+/*   Created: 2022/11/15 16:11:16 by olimarti          #+#    #+#             */
+/*   Updated: 2022/11/15 17:39:23 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdio.h>
+#include <stdlib.h>
 
-int	ft_atoi(const char *nptr)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int		nb;
-	size_t	i;
+	unsigned char	*mem;
+	size_t			i;
 
-	nb = 0;
 	i = 0;
-	while ((*nptr >= 9 && *nptr <= 13) || *nptr == 32)
-		nptr++;
-	if (*nptr == '-' || *nptr == '+')
-		i++;
-	while (nptr[i] != 0 && ft_isdigit(nptr[i]))
+	if ((size == 0) || (nmemb == 0) || ((int)(nmemb * size) / size != nmemb))
+		return (NULL);
+	mem = malloc(nmemb * size);
+	if (!mem)
+		return (NULL);
+	while (i < (nmemb * size))
 	{
-		nb = nb * 10 + (nptr[i] - 48);
+		mem[i] = 0;
 		i++;
 	}
-	if (*nptr == '-')
-	{
-		nb *= -1;
-	}
-	return (nb);
+	return ((void *)(mem));
 }
