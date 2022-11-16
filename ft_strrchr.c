@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 18:23:41 by olimarti          #+#    #+#             */
-/*   Updated: 2022/11/15 17:40:21 by olimarti         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:07:10 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char	*ft_strrchr(const char *s, int c)
 	unsigned char	cc;
 
 	src = (unsigned char *)s;
-	result = 0;
 	cc = (unsigned char)c;
+	result = 0;
 	while (*src != 0)
 	{
 		if (*src == cc)
@@ -28,8 +28,6 @@ char	*ft_strrchr(const char *s, int c)
 		src++;
 	}
 	if (*src == cc)
-	{
 		result = src;
-	}
 	return ((char *)(result));
 }

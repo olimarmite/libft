@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 20:08:01 by olimarti          #+#    #+#             */
-/*   Updated: 2022/11/14 22:29:18 by olimarti         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:13:17 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	if (n == 0)
 		return (0);
 	while (sc1[i] == sc2[i] && i + 1 < n)
-	{
 		i++;
-	}
 	return (sc1[i] - sc2[i]);
 }

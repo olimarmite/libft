@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 00:11:41 by olimarti          #+#    #+#             */
-/*   Updated: 2022/11/15 19:58:58 by olimarti         ###   ########.fr       */
+/*   Created: 2022/11/15 17:56:44 by olimarti          #+#    #+#             */
+/*   Updated: 2022/11/15 18:34:33 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdio.h>
+#include <stdlib.h>
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strdup(const char *s)
 {
 	size_t	i;
-	size_t	j;
-	size_t	little_size;
+	size_t	len;
+	char	*buff;
 
+	len = ft_strlen(s);
 	i = 0;
-	little_size = ft_strlen(little);
-	if (*little == 0)
-		return ((char *)big);
-	while ((big[i] != 0) && (i + little_size) <= len)
+	buff = malloc((len + 1) * sizeof(char));
+	if (!buff)
+		return (NULL);
+	while (i <= (len))
 	{
-		j = 0;
-		while ((little[j] != 0) && (big[i + j] == little[j]))
-			j++;
-		if (little[j] == 0)
-			return ((char *)(big + i));
+		buff[i] = s[i];
 		i++;
 	}
-	return (0);
+	return (buff);
 }
