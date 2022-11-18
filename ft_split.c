@@ -28,7 +28,7 @@ char	**free_tab(char **tab, size_t count)
 	return (NULL);
 }
 
-int	count_spaces(char const *s, char c)
+size_t	count_words(char const *s, char c)
 {
 	size_t	space_count;
 	size_t	i;
@@ -58,10 +58,7 @@ char	**pupulate_tab(char **tab, char const *s, char c)
 	last_space = 0;
 	space_count = 0;
 	while (s[i] == c && s[i])
-	{
-		i++;
-		last_space = i;
-	}
+		last_space = ++i;
 	while (s[i])
 	{
 		while (s[i] != c && s[i])
@@ -84,26 +81,10 @@ char	**ft_split(char const *s, char c)
 	char	**result;
 	size_t	space_count;
 
-	space_count = count_spaces(s, c);
+	space_count = count_words(s, c);
 	result = malloc((space_count + 1) * sizeof(char *));
 	if (!result)
 		return (NULL);
 	result[space_count] = 0;
 	return (pupulate_tab(result, s, c));
 }
-
-// int	main(void)
-// {
-// 	char	**out1;
-
-// 	// char	**out2;
-// 	out1 = ft_split("     ", ' ');
-// 	printf("####################\n");
-// 	// out2 = ft_split("", '_');
-// 	// printf("--------------------\n");
-// 	while (*out1)
-// 	{
-// 		printf("\n[%s]\n", *out1);
-// 		out1++;
-// 	}
-// }
