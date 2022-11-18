@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 12:38:40 by olimarti          #+#    #+#             */
-/*   Updated: 2022/11/16 13:32:51 by olimarti         ###   ########.fr       */
+/*   Updated: 2022/11/17 18:42:36 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	buff_size = 0;
 	i = 0;
-	while (s[start + buff_size] && buff_size < len)
-	{
-		buff_size++;
-	}
+	while (s[i] && i <= start)
+		i++;
+	if (i >= start)
+		while (s[start + buff_size] && buff_size < len)
+			buff_size++;
+	i = 0;
 	buff = malloc((buff_size + 1) * sizeof(unsigned char));
 	if (!buff)
 		return (0);
