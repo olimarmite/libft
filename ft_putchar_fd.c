@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olivier <olivier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 13:03:47 by olivier           #+#    #+#             */
-/*   Updated: 2022/11/20 13:12:04 by olivier          ###   ########.fr       */
+/*   Created: 2022/11/20 13:00:09 by olivier           #+#    #+#             */
+/*   Updated: 2022/11/20 13:15:54 by olivier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t i;
-	unsigned char *buff;
-	i = 0;
-	buff = (unsigned char *)ft_strdup(s);
-	if (!buff)
-		return (NULL);
-	while (buff[i])
-	{
-		buff[i] = f(i, buff[i]);
-		i++;
-	}
-	return (char *)(buff);
+	write(fd, &c, 1);
 }
