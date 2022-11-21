@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:11:16 by olimarti          #+#    #+#             */
-/*   Updated: 2022/11/16 12:09:39 by olimarti         ###   ########.fr       */
+/*   Updated: 2022/11/21 12:40:31 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t			i;
 
 	i = 0;
-	if ((size == 0) || (nmemb == 0) || ((nmemb * size) / size != nmemb))
+	if ((size == 0) || (nmemb == 0))
+		return (malloc(0));
+	if (((nmemb * size) / size != nmemb))
 		return (NULL);
 	mem = malloc(nmemb * size);
 	if (!mem)

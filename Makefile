@@ -8,9 +8,10 @@ SRCS=ft_bzero.c  ft_isalnum.c  ft_isalpha.c  ft_isascii.c  ft_isdigit.c \
 	ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
 	ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
 	ft_putendl_fd.c ft_putnbr_fd.c
-	
-BONUS_SRCS= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
-	ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear.c
+
+BONUS_SRCS= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
+	ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
+	ft_lstmap.c
 BONUS_OBJS= ${BONUS_SRCS:.c=.o}
 TEST_SRCS = ./test/*.c
 NAME=libft.a
@@ -20,16 +21,18 @@ RM = rm -f
 
 all: ${NAME}
 
-${NAME}:
-	${CC} -c ${CFLAGS} ${SRCS} 
+
+${NAME}: ${OBJS}
 	ar -rc ${NAME} ${OBJS}
 
-bonus:
-	${CC} -c ${CFLAGS} ${SRCS} ${BONUS_SRCS}
+.c.o:
+	${CC} -c ${CFLAGS} $<
+
+bonus: ${BONUS_OBJS}
 	ar -rc ${NAME} ${BONUS_OBJS}
 
 clean:
-	${RM} ${OBJS}
+	${RM} ${OBJS} ${BONUS_OBJS}
 
 fclean: clean
 	${RM} ${NAME}
@@ -43,5 +46,5 @@ test: fclean
 re: fclean all
 
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles - -shared -o libft.so $(OBJS)
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS_SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS_OBJS)
