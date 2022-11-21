@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 14:05:38 by olimarti          #+#    #+#             */
-/*   Updated: 2022/11/21 14:11:15 by olimarti         ###   ########.fr       */
+/*   Updated: 2022/11/21 22:23:49 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (f == NULL)
+	if (!f || !lst)
 		return ;
 	while (lst != NULL)
 	{

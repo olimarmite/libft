@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olivier <olimarti@student.42.fr>           +#+  +:+       +#+        */
+/*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 16:26:44 by olivier           #+#    #+#             */
-/*   Updated: 2022/11/20 16:26:45 by olivier          ###   ########.fr       */
+/*   Updated: 2022/11/21 22:28:09 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *next;
-	if (lst == NULL || *lst == NULL)
+	t_list	*next;
+
+	if (lst == NULL || *lst == NULL || !del)
 		return ;
 	while ((*lst)->next != NULL)
 	{

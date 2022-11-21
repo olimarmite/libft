@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:02:21 by olimarti          #+#    #+#             */
-/*   Updated: 2022/11/21 12:02:22 by olimarti         ###   ########.fr       */
+/*   Updated: 2022/11/21 22:23:41 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t i;
+	size_t	i;
+
+	if (!s || !f)
+		return ;
 	i = 0;
 	while (s[i])
 	{

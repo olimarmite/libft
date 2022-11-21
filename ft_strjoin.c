@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:02:01 by olimarti          #+#    #+#             */
-/*   Updated: 2022/11/16 16:50:49 by olimarti         ###   ########.fr       */
+/*   Updated: 2022/11/21 22:11:55 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t			s2_len;
 	unsigned char	*buff;
 
+	if (!s1 || !s2)
+		return (NULL);
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
 	buff = malloc((s1_len + s2_len + 1) * sizeof(unsigned char));

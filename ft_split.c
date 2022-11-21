@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 22:35:14 by olimarti          #+#    #+#             */
-/*   Updated: 2022/11/18 17:55:28 by olimarti         ###   ########.fr       */
+/*   Updated: 2022/11/21 22:16:49 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ char	**ft_split(char const *s, char c)
 	char	**result;
 	size_t	space_count;
 
+	if (!s)
+		return (NULL);
 	space_count = count_words(s, c);
 	result = malloc((space_count + 1) * sizeof(char *));
 	if (!result)

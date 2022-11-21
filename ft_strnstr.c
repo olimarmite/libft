@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 00:11:41 by olimarti          #+#    #+#             */
-/*   Updated: 2022/11/15 19:58:58 by olimarti         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:55:20 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	j;
 	size_t	little_size;
 
+	if ((!big || !little) && len == 0)
+		return (NULL);
 	i = 0;
 	little_size = ft_strlen(little);
 	if (*little == 0)
