@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 23:29:22 by olimarti          #+#    #+#             */
-/*   Updated: 2022/11/19 17:35:47 by olimarti         ###   ########.fr       */
+/*   Updated: 2022/11/21 22:58:03 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,3 @@ char	*ft_itoa(int n)
 		return (NULL);
 	return (itoa_dest(buff, n, number_size, is_negative));
 }
-
-// int	main(int argc, char *argv[])
-// {
-// 	if (argc == 2)
-// 		printf("[%s]\n", ft_itoa(ft_atoi(argv[1])));
-// }

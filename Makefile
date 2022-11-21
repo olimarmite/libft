@@ -15,7 +15,7 @@ BONUS_SRCS= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 BONUS_OBJS= ${BONUS_SRCS:.c=.o}
 TEST_SRCS = ./test/*.c
 NAME=libft.a
-OBJS= ${SRCS:.c=.o} #${LIBS:.h=.h.gch}
+OBJS= ${SRCS:.c=.o}
 
 RM = rm -f
 
@@ -38,13 +38,6 @@ fclean: clean
 	${RM} ${NAME}
 	${RM} a.out
 
-
-test: fclean
-	${CC} ${SRCS} ${TEST_SRCS} ${LIBS} -lbsd
-	./a.out
-
 re: fclean all
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS_SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS_OBJS)
+.PHONY: all bonus clean fclean re
