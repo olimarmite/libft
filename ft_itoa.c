@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 23:29:22 by olimarti          #+#    #+#             */
-/*   Updated: 2022/11/21 22:58:03 by olimarti         ###   ########.fr       */
+/*   Updated: 2022/11/23 12:25:03 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	calc_positive_number_size(int nb)
+static int	calc_positive_number_size(int nb)
 {
 	int	number_size;
 
@@ -27,7 +27,7 @@ int	calc_positive_number_size(int nb)
 	return (number_size);
 }
 
-char	*itoa_dest(char *buff, int n, int number_size, int is_negative)
+static char	*itoa_dest(char *buff, int n, int number_size, int is_negative)
 {
 	buff[number_size + is_negative] = 0;
 	number_size--;

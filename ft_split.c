@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 22:35:14 by olimarti          #+#    #+#             */
-/*   Updated: 2022/11/21 22:16:49 by olimarti         ###   ########.fr       */
+/*   Updated: 2022/11/23 12:25:01 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char	**free_tab(char **tab, size_t count)
+static char	**free_tab(char **tab, size_t count)
 {
 	size_t	i;
 
@@ -28,7 +28,7 @@ char	**free_tab(char **tab, size_t count)
 	return (NULL);
 }
 
-size_t	count_words(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
 	size_t	space_count;
 	size_t	i;
@@ -48,7 +48,7 @@ size_t	count_words(char const *s, char c)
 	return (space_count);
 }
 
-char	**pupulate_tab(char **tab, char const *s, char c)
+static char	**pupulate_tab(char **tab, char const *s, char c)
 {
 	size_t	i;
 	size_t	last_space;
